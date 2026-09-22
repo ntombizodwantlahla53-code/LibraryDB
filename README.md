@@ -1,5 +1,7 @@
 # LibraryDB
 
+<img src="https://socialify.git.ci/ntombizodwantlahla53-code/LibraryDB/image?language=1&owner=1&name=1&stargazers=1&theme=Light" alt="LibraryDB" width="640" height="320" />
+
 ## Sprint 1: Project Setup
 ```
 CREATE TABLE IF NOT EXISTS books(
