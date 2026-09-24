@@ -90,7 +90,7 @@ WHERE availability = true;
 ```sql
 
 UPDATE books
-SET available = false
+SET availability = false
 WHERE book_id = 1;
 
 UPDATE books
@@ -124,7 +124,7 @@ SELECT * FROM authors
 WHERE nationality = 'American';
 
 UPDATE books
-SET available = true;
+SET availability = true;
 
 SELECT * FROM authors
 WHERE name LIKE '%George%';
