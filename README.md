@@ -3,7 +3,8 @@
 <img src="https://socialify.git.ci/ntombizodwantlahla53-code/LibraryDB/image?language=1&owner=1&name=1&stargazers=1&theme=Light" alt="LibraryDB" width="640" height="320" />
 
 ## Sprint 1: Project Setup
-```
+```sql
+
 CREATE TABLE IF NOT EXISTS books(
 book_id BIGSERIAL PRIMARY KEY NOT NULL,
 title VARCHAR(50) NOT NULL,
@@ -30,7 +31,8 @@ borrowed_books INT
 ```
 
 ## Sprint 2: Insert Data
-```
+```sql
+
 INSERT INTO books (book_id, title, author_id, genres, published_year, availability) 
 VALUES
 (1, '1984', 1, ARRAY['Dystopian', 'Political Fiction'], 1949, TRUE),
@@ -72,7 +74,8 @@ VALUES
 (10, 'Jack Anderson', 'jack@example.com', ARRAY[7, 8]);
 ```
 ## Sprint 3: Read Operations (Queries)
-```
+```sql
+
 SELECT * FROM books
 
 SELECT title FROM books;
@@ -82,30 +85,46 @@ WHERE author_id = 1;
 
 SELECT * FROM books
 WHERE availability = true;
-
+```
 ## Sprint 4: Update Operations
+```sql
+
+UPDATE books
+SET available = false
+WHERE book_id = 1;
 
 UPDATE books
 SET genres = genres || ARRAY['My Africa']
 WHERE book_id = 6;
 
-SELECT * FROM books;
-SELECT * FROM patrons;
+UPDATE patrons
+SET borrowed_books = array_append(borrowed_books,1)
+WHERE patron_id =1;
+
 ```
 ## Sprint 5: Delete Operations
-```
-.......
-...
-...
-...
+```sql
+
+DELETE FROM books
+WHERE title = 'Moby-Dick';
+
+DELETE FROM books
+WHERE author_id = 10;
+
+DELETE FROM authors
+WHERE author_id = 10;
 ```
 ## Sprint 6: Advanced Queries
-```
+```sql
+
 SELECT * FROM books 
 WHERE published_year > 1950;
 
 SELECT * FROM authors
 WHERE nationality = 'American';
+
+UPDATE books
+SET available = true;
 
 SELECT * FROM authors
 WHERE name LIKE '%George%';
@@ -113,6 +132,10 @@ WHERE name LIKE '%George%';
 UPDATE books
 SET availability = false
 WHERE book_id = 1;
+
+UPDATE books
+SET published_year = published_year + 1
+WHERE published_year = 1869;
 ```
 
 
